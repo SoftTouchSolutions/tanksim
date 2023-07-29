@@ -12,7 +12,7 @@ function getInstance(){
     }
     return sim;
 }
-export const revalidate = 1; //revalidate api every 1 second
+export const revalidate = 0.1; //revalidate api every 1 second
 export async function GET (request ){
   sim = getInstance();
   await sim.render();
