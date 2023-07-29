@@ -1,5 +1,8 @@
 
 import TankModel from './tankmodel';
+import Random from './random';
+
+var rand = new Random();
 var sim;
 function getInstance(){
     if (sim == null) {
@@ -13,5 +16,5 @@ export async function GET (request ){
   sim = getInstance();
   await sim.render();
   let pc = await sim.mainTank.pc;
-  return new Response(JSON.stringify(pc));
+  return new Response(JSON.stringify([pc,rand.nextInt(50)]));
 }
