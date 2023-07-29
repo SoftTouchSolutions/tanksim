@@ -1,4 +1,10 @@
+
+import TankModel from './tankmodel';
+
+const sim = new TankModel();
+
 export async function GET (request ){
-  const result = [1,2,3]
-  return new Response(JSON.stringify(result));
+  sim.render();
+  let pc = sim.mainTank.pc;
+  return new Response(JSON.stringify(pc));
 }
