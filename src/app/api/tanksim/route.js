@@ -2,12 +2,12 @@
 import TankModel from './tankmodel';
 var sim;
 function getInstance(){
-    if (instance == null) {
-        instance = new TankModel();
+    if (sim == null) {
+        sim = new TankModel();
         // Hide the constructor so the returned object can't be new'd...
-        instance.constructor = null;
+        sim.constructor = null;
     }
-    return instance;
+    return sim;
 }
 export async function GET (request ){
   sim = getInstance();
