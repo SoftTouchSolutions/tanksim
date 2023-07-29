@@ -17,5 +17,5 @@ export async function GET (request ){
   sim = getInstance();
   await sim.render();
   let pc = await sim.mainTank.pc;
-  return new Response(JSON.stringify([pc,rand.nextInt(50)]));
+  return new Response(JSON.stringify(pc)); //,rand.nextInt(50)]));
 }
